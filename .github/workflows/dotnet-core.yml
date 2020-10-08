@@ -18,7 +18,7 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore IntermediatesRemover
     - name: Build
       run: dotnet build IntermediatesRemover/IntermediatesRemover.sln --configuration Release --no-restore
     - name: Test
