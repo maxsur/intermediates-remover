@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntermediatesRemoverCommon"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntermediatesRemoverCommon.Tests", "IntermediatesRemoverCommon.Tests\IntermediatesRemoverCommon.Tests.csproj", "{6819573A-D6C4-4278-97CF-6B3E564CD10F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A30443F2-6602-4FF1-90B5-3FC559D6FE48}"
+	ProjectSection(SolutionItems) = preProject
+		IntermediatesRemover.ruleset = IntermediatesRemover.ruleset
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
