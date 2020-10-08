@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntermediatesRemoverCli", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntermediatesRemoverCommon", "IntermediatesRemoverCommon\IntermediatesRemoverCommon.csproj", "{95BFADB1-E955-4928-A653-3F01A7FFD568}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntermediatesRemoverCommon.Tests", "IntermediatesRemoverCommon.Tests\IntermediatesRemoverCommon.Tests.csproj", "{6819573A-D6C4-4278-97CF-6B3E564CD10F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{95BFADB1-E955-4928-A653-3F01A7FFD568}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95BFADB1-E955-4928-A653-3F01A7FFD568}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95BFADB1-E955-4928-A653-3F01A7FFD568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6819573A-D6C4-4278-97CF-6B3E564CD10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6819573A-D6C4-4278-97CF-6B3E564CD10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6819573A-D6C4-4278-97CF-6B3E564CD10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6819573A-D6C4-4278-97CF-6B3E564CD10F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
