@@ -47,7 +47,8 @@ namespace IntermediatesRemoverCommon
                         found = true;
                     }
                 }
-                
+
+                // Stop recurse subdirectories immidiately after first match. We do not need deper checks.
                 if (!found) GetFolder(strDir, filters);
             }
         }
