@@ -11,9 +11,9 @@ namespace IntermediatesRemoverCli
             const string defaultRootName = @"C:\Projects";
             const string defaultFolderNames = "bin,obj,Debug,Release,DebugUnitTests,TestResults,lut";
             
-            Console.WriteLine($"Hello '{defaultFolderNames}'!");
+            Console.WriteLine($"Hello '{defaultFolderNames}'! and {args}");
 
-            var source = new CancellationTokenSource();
+            using var source = new CancellationTokenSource();
             var folders = new Folders(source.Token);
             folders.FindProgressChanged += (sender, eventArgs) => Console.WriteLine(eventArgs.Folder);
             folders.FindFolders(defaultRootName, defaultFolderNames.Split(','));

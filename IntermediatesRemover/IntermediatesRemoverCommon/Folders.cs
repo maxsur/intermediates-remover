@@ -10,9 +10,9 @@ namespace IntermediatesRemoverCommon
     /// <summary> Represents folder pathes found by filters. </summary>
     public sealed class Folders
     {
-        private CancellationToken _cancellationToken;
+        private readonly CancellationToken _cancellationToken;
 
-        public event EventHandler<FindProgressEventArgs> FindProgressChanged;
+        public event EventHandler<FindProgressEventArgs>? FindProgressChanged;
 
         public Folders(CancellationToken cancellationToken)
         {
