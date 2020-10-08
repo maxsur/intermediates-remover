@@ -22,4 +22,4 @@ jobs:
     - name: Build
       run: dotnet build IntermediatesRemover/IntermediatesRemover.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test IntermediatesRemover/*.Tests.csproj --no-restore --verbosity normal
+      run: dotnet test IntermediatesRemover/*.Tests --no-restore --verbosity normal
