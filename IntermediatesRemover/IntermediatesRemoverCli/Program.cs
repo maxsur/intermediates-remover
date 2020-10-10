@@ -11,7 +11,9 @@ namespace IntermediatesRemoverCli
     {
         private static void Main(string[] args)
         {
-            const string defaultRootName = @"C:\Projects";
+            const string defaultRootName = @"C:\Projects\intermediates-remover\IntermediatesRemover";  // C:\Projects
+            
+            // Should be case sensitive
             const string defaultFolderNames = "bin,obj,Debug,Release,DebugUnitTests,TestResults,lut";
             
             Console.WriteLine($"Hello '{defaultFolderNames}'! and {args}");
@@ -23,7 +25,6 @@ namespace IntermediatesRemoverCli
             var folders = new Folders(source.Token);
             folders.FindProgressChanged += (sender, eventArgs) => foundFolderNames.Add(eventArgs.Folder);
             folders.FindFolders(defaultRootName, defaultFolderNames.Split(','));
-
 
             var foundFolders = foundFolderNames.Select(folderName => new Folder(folderName));
             foreach (var folder in foundFolders) folder.Delete();

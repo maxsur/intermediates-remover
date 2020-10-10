@@ -41,7 +41,7 @@ namespace IntermediatesRemoverCommon
                 {
                     _cancellationToken.ThrowIfCancellationRequested();
 
-                    if (strLastPart.ToLower(CultureInfo.CurrentCulture) == strFilter)
+                    if (strLastPart == strFilter)
                     {
                         OnFindProgressChanged(new FindProgressEventArgs(strDir));
                         found = true;
