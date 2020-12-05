@@ -11,7 +11,7 @@ namespace IntermediatesRemoverCli
     {
         private static void Main(string[] args)
         {
-            const string defaultRootName = @"C:\Projects\intermediates-remover\IntermediatesRemover";  // C:\Projects
+            const string defaultRootName = @"C:\Projects";
             
             // Should be case sensitive
             const string defaultFolderNames = "bin,obj,Debug,Release,DebugUnitTests,TestResults,lut";
