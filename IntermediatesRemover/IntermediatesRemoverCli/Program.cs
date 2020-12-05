@@ -14,8 +14,12 @@ namespace IntermediatesRemoverCli
         {
             try
             {
-                CliOptions options = new CliOptions(@"C:\Projects");
-                Parser.Default.ParseArguments<CliOptions>(args).WithParsed(opts => options = opts);
+                CliOptions options = new CliOptions(null);
+                Parser.Default.ParseArguments<CliOptions>(args)
+                    .WithParsed(opts => options = opts)
+                    .WithNotParsed(errs => Exit(1));
+
+                if(options.RootFolderName == null) throw new InvalidOperationException("Root folder is not set");
 
                 Console.WriteLine($"Root folder: {options.RootFolderName}");
 
@@ -41,11 +45,18 @@ namespace IntermediatesRemoverCli
                 Console.WriteLine(e);
             }
 
+            Exit(0);
+        }
+
+        private static void Exit(int exitCode)
+        {
             if (ConsoleMode.IsConsoleWillBeDestroyedAtTheEnd)
             {
                 Console.WriteLine("Press any key to continue . . .");
                 Console.ReadKey();
             }
+
+            Environment.Exit(exitCode);
         }
     }
 }
