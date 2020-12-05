@@ -12,24 +12,34 @@ namespace IntermediatesRemoverCli
     {
         private static void Main(string[] args)
         {
-            CliOptions options = new CliOptions();
-            Parser.Default.ParseArguments<CliOptions>(args).WithParsed(opts => options = opts);
+            try
+            {
+                CliOptions options = new CliOptions();
+                Parser.Default.ParseArguments<CliOptions>(args).WithParsed(opts => options = opts);
 
-            Console.WriteLine($"Root folder: {options.RootFolderName}");
+                Console.WriteLine($"Root folder: {options.RootFolderName}");
 
-            // Should be case sensitive
-            const string defaultFolderNames = "bin,obj,Debug,Release,DebugUnitTests,TestResults,lut";
-            
-            using var source = new CancellationTokenSource();
+                // Should be case sensitive
+                const string defaultFolderNames = "bin,obj,Debug,Release,DebugUnitTests,TestResults,lut";
 
-            ICollection<string> foundFolderNames = new Collection<string>();
+                using var source = new CancellationTokenSource();
 
-            var folders = new Folders(source.Token);
-            folders.FindProgressChanged += (sender, eventArgs) => foundFolderNames.Add(eventArgs.Folder);
-            folders.FindFolders(options.RootFolderName, defaultFolderNames.Split(','));
+                ICollection<string> foundFolderNames = new Collection<string>();
 
-            var foundFolders = foundFolderNames.Select(folderName => new Folder(folderName));
-            foreach (var folder in foundFolders) folder.Delete();
+                var folders = new Folders(source.Token);
+                folders.FindProgressChanged += (sender, eventArgs) => foundFolderNames.Add(eventArgs.Folder);
+                folders.FindFolders(options.RootFolderName, defaultFolderNames.Split(','));
+
+                var foundFolders = foundFolderNames.Select(folderName => new Folder(folderName));
+                foreach (var folder in foundFolders) folder.Delete();
+
+            }
+#pragma warning disable CA1031 // Do not catch general exception types
+            catch (Exception e)
+#pragma warning restore CA1031 // Do not catch general exception types
+            {
+                Console.WriteLine(e);
+            }
 
             if (ConsoleMode.IsConsoleWillBeDestroyedAtTheEnd)
             {
