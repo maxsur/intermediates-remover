@@ -28,6 +28,12 @@ namespace IntermediatesRemoverCli
 
             var foundFolders = foundFolderNames.Select(folderName => new Folder(folderName));
             foreach (var folder in foundFolders) folder.Delete();
+
+            if (ConsoleMode.IsConsoleWillBeDestroyedAtTheEnd)
+            {
+                Console.WriteLine("Press any key to continue . . .");
+                Console.ReadKey();
+            }
         }
     }
 }
