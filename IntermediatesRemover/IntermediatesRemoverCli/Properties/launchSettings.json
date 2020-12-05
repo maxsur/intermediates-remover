@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "IntermediatesRemoverCli": {
+      "commandName": "Project",
+      "commandLineArgs": "-r \"C:\\Projects\""
+    }
+  }
+}
