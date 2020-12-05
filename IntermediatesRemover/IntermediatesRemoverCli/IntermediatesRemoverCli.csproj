@@ -20,4 +20,10 @@
     <ProjectReference Include="..\IntermediatesRemoverCommon\IntermediatesRemoverCommon.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Run.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
