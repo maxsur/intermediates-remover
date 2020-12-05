@@ -17,7 +17,7 @@ namespace IntermediatesRemoverCli
                 CliOptions options = new CliOptions(null);
                 Parser.Default.ParseArguments<CliOptions>(args)
                     .WithParsed(opts => options = opts)
-                    .WithNotParsed(errs => Exit(1));
+                    .WithNotParsed(errs => Exit(-1));
 
                 if(options.RootFolderName == null) throw new InvalidOperationException("Root folder is not set");
 
