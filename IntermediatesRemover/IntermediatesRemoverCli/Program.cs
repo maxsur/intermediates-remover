@@ -14,7 +14,7 @@ namespace IntermediatesRemoverCli
         {
             try
             {
-                CliOptions options = new CliOptions();
+                CliOptions options = new CliOptions(@"C:\Projects");
                 Parser.Default.ParseArguments<CliOptions>(args).WithParsed(opts => options = opts);
 
                 Console.WriteLine($"Root folder: {options.RootFolderName}");
