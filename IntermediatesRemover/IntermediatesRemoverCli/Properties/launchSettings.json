@@ -2,7 +2,7 @@
   "profiles": {
     "IntermediatesRemoverCli": {
       "commandName": "Project",
-      "commandLineArgs": "-r \"C:\\Projects\""
+      "commandLineArgs": "-r \"C:\\Projects\\MetPro\""
     }
   }
 }

@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading;
 using CommandLine;
 using IntermediatesRemoverCommon;
-using JetBrains.Annotations;
 
 namespace IntermediatesRemoverCli
 {
@@ -21,8 +20,6 @@ namespace IntermediatesRemoverCli
             // Should be case sensitive
             const string defaultFolderNames = "bin,obj,Debug,Release,DebugUnitTests,TestResults,lut";
             
-            Console.WriteLine($"Hello '{defaultFolderNames}'! and {args}");
-
             using var source = new CancellationTokenSource();
 
             ICollection<string> foundFolderNames = new Collection<string>();
@@ -40,13 +37,5 @@ namespace IntermediatesRemoverCli
                 Console.ReadKey();
             }
         }
-    }
-
-    /// <summary> CLI options. </summary>
-    [UsedImplicitly]
-    public sealed class CliOptions
-    {
-        [Option('r', "root", Required = true, HelpText = "Root folder with Visual Studio projects.")]
-        public string RootFolderName { get; set; }
     }
 }
